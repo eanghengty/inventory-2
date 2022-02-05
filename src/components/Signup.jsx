@@ -19,7 +19,7 @@ const Signup = () => {
         console.log(user)
         navigate("/")
         }catch(error){
-            setError("login failed")
+            setError("signup failed")
             
         }
     }
@@ -56,7 +56,7 @@ const Signup = () => {
                 </div>
                
                 
-                <button onClick={login} className="bg-slate-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                <button onClick={login} className="bg-slate-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign up</button>
             </div>
         </section>
         <div className="max-w-lg mx-auto text-center mt-12 mb-6">
