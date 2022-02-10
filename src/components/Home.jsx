@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {useEffect} from 'react'
 import {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faEye, faTrash ,faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faEye, faTrash ,faSearch, faList} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate} from 'react-router-dom'
 import Header from './Header'
 const Home = () => {
@@ -60,6 +60,45 @@ const Home = () => {
         />
       </div>
       </form>
+      
+     
+  <button className="
+  relative 
+  flex jutify-center items-center 
+  bg-white 
+  text-gray-600 rounded 
+  focus:outline-none focus:ring ring-gray-200
+  border shadow group
+">
+  <p className="px-4">Select</p>
+  <span className="border-l p-2 hover:bg-gray-100">
+    <FontAwesomeIcon icon={faList}></FontAwesomeIcon>
+  </span>
+  <div className="
+    absolute top-full
+    hidden group-focus:block 
+    min-w-full w-max 
+    bg-white 
+    shadow-md mt-1 rounded
+  ">
+    <ul className="text-left border rounded">
+      <li value="price" className="px-4 py-1 hover:bg-gray-100 border-b">
+        Price
+      </li>
+      <li className="px-4 py-1 hover:bg-gray-100 border-b">
+        menu list 2
+      </li>
+      <li className="px-4 py-1 hover:bg-gray-100 border-b">
+        menu list 3
+      </li>
+      <li className="px-4 py-1 hover:bg-gray-100 border-b">
+        menu list 4
+      </li>
+      <li className="px-4 py-1 hover:bg-gray-100" >Revert</li>
+    </ul>
+  </div>
+</button>
+
         </div>
         </div>
         <div className="p-5 h-screen bg-gray-100">

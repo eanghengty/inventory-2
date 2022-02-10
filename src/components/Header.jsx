@@ -24,8 +24,9 @@ const Header = () => {
         
         <Link to="/" className="py-5 px-3 hover:underline">DashBoard</Link>
         <Link to="/list" className="py-5 px-3  hover:underline">Item</Link>
-        <Link to="/add" className="py-5 px-3  hover:underline">stock in</Link>
-        <Link to="/out" className="py-5 px-3  hover:underline">stock out</Link>
+        <Link to="/add" className="py-5 px-3  hover:underline">Stock in</Link>
+        <Link to="/remove" className="py-5 px-3  hover:underline">Stock out</Link>
+        <Link to="/history" className="py-5 px-3  hover:underline">History</Link>
         <Link to="/profile" >
           <img src={Background} alt="" className="w-10 h-10 rounded-full border-2 border-white" />
         </Link>

@@ -11,10 +11,11 @@ import ProtectedRoute from './ProtectedRoute'
 import AddEdit from '../src/components/AddEdit'
 import Home from '../src/components/Home'
 import View from '../src/components/View'
-import About from '../src/components/About'
+import Dashboard from './components/Dashboard'
 import Header from '../src/components/Header'
 import Search from '../src/components/Search'
 import AuthPage from './components/AuthPage';
+import AddRemove from './components/AddRemove';
 function App() {
   // const user = localStorage.getItem('token')
   return (
@@ -29,10 +30,10 @@ function App() {
       <Route path="/signup" element={<Signup></Signup>}></Route>
       <Route path="/search" element={<Search></Search>}></Route>
       <Route path="/list" element={<Home></Home>}></Route>
-      <Route path="/*" element={<About></About>}></Route>
+      <Route path="/*" element={<Dashboard></Dashboard>}></Route>
       <Route path="/update/:id" element={<AddEdit></AddEdit>}></Route>
       <Route path="/view/:id" element={<View></View>}></Route>
-     
+      <Route path="/remove" element={<AddRemove></AddRemove>}></Route>
       <Route path="/add" element={<AddEdit></AddEdit>}></Route>
     </Routes>
   

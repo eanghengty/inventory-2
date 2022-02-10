@@ -17,7 +17,7 @@ const initialState={
     date:""
     
 }
-const AddEdit = () => {
+const AddRemove = () => {
     const navigate = useNavigate()
     const [state, setState]= useState(initialState)
     const [data, setData]= useState({})
@@ -52,31 +52,7 @@ const AddEdit = () => {
     
     const {id} = useParams()
 
-    useEffect(()=>{
-        fireDb.child("item").on("value",(snapshot)=>{
-            if(snapshot.val() !== null){
-                setData({...snapshot.val()})
-            }else{
-                setData({})
-            }
-        })
-        return()=>{
-            setData({})
-        }
-    },[id])
-
-    useEffect(()=>{
-        if(id){
-            setState({...data[id]})
-        }
-        else{
-            setState({...initialState})
-        }
-
-        return() =>{
-            setState({...initialState})
-        }
-    },[id,data])
+   
 
   return (
       <div>
@@ -84,8 +60,8 @@ const AddEdit = () => {
       
     <div className="mt-3 h-screen p-3 shadow rounded-lg">
         
-      <form className="container mx-auto bg-gray-100 max-w-lg p-3 h-4/5 rounded-lg " onSubmit={handleSubmit}>
-          <h2 className="text-black text-xl font-semibold text-center ">{id ? "Update Item" : "Create Item"}</h2>
+      <form className="container mx-auto bg-gray-100 max-w-lg p-3 h-2/3 rounded-lg " onSubmit={handleSubmit}>
+          <h2 className="text-black text-xl font-semibold text-center ">Stock out</h2>
           <hr className="bg-black h-1"></hr>
          <div className="mt-7">
          <label htmlFor="name" className="text-xl">Item Name</label>
@@ -103,27 +79,17 @@ const AddEdit = () => {
           <label className="text-xl" htmlFor="price">Item Price</label>
           <input required className="rounded-lg float-right p-3 text-center outline-blue-400 text-black " type="number" id="price" name="price" placeHolder="Item Price" value={price || ""} onChange={handleInputChange}></input>
           </div>
-         <div className="mt-7">
-         <label className="text-xl" htmlFor="limitingItem">Limiting Low Item</label>
-          <input required className="rounded-lg float-right p-3 text-center outline-blue-400 text-black " type="number" id="limitingItem" name="limitingItem" placeHolder="Limiting Item" value={limitingItem || ""} onChange={handleInputChange}></input>
-         </div>
-          <div className="mt-7">
-          <label className="text-xl" htmlFor="collections">Item Collections</label>
-          <input required className="rounded-lg float-right p-3 text-center outline-blue-400 text-black " type="text" id="collections" name="collections" placeHolder="Item collections" value={collections || ""} onChange={handleInputChange}></input>
-          
-          </div>
-          <Link to="/" className="text-indigo-400 hover:underline">Add new collections</Link>
           <div className="mt-7">
           <label className="text-xl" htmlFor="collections">Date</label>
           <input required className="rounded-lg float-right p-3 text-center outline-blue-400 text-black " type="date" id="collections" name="date" placeHolder="Item Date dd/mm/yy" value={date || ""} onChange={handleInputChange}></input>
           </div>
           
           
-          <button type="submit" value="save" className="py-2 px-3 bg-slate-400 text-white w-full mt-7 hover:bg-slate-700 rounded-lg">{id ? "Update" : "Create"}</button>
+          <button type="submit" value="save" className="py-2 px-3 bg-slate-400 text-white w-full mt-7 hover:bg-slate-700 rounded-lg">Check out</button>
       </form>
     </div>
     </div>
   )
 }
 
-export default AddEdit
+export default AddRemove
